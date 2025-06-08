@@ -11,7 +11,7 @@ token = None
 def get_rtsp_url(ip, port, user, password):
     try:
         print(f"[+] Connecting to CCTV at {ip}:{port} ...")
-        mycam = ONVIFCamera(ip, port, user, password)
+        mycam = ONVIFCamera(ip, port, user, password, wsdl_dir='./wsdl', no_cache=True)
 
         global ptz, token
         media_service = mycam.create_media_service()
